@@ -150,6 +150,7 @@
             this.FlexDock.TabIndex = 10;
             this.FlexDock.Text = "Dock with FH";
             this.FlexDock.UseVisualStyleBackColor = true;
+            this.FlexDock.CheckedChanged += new System.EventHandler(this.FlexDock_CheckedChanged);
             // 
             // button2
             // 
@@ -184,8 +185,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(300, 216);
-            this.ControlBox = false;
             this.Controls.Add(this.GovCheck);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);

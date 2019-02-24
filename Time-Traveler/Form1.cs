@@ -29,6 +29,15 @@ namespace Time_Traveler
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            System.Diagnostics.Process[] ps = System.Diagnostics.Process.GetProcessesByName("Time-Traveler");
+
+            if (ps.Length>1)
+            {
+                this.Close();
+                return;
+            }
+
             FlexDock.Checked = true;
             GovCheck.Checked = true;
 
@@ -282,6 +291,22 @@ namespace Time_Traveler
         {
             this.Close();
 
+        }
+
+        private void FlexDock_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FlexDock.Checked)
+            {
+                this.MinimizeBox = false;
+          
+                this.ControlBox = false;
+
+            }else
+            {
+                this.ControlBox = true;
+                this.MinimizeBox = true;
+
+            }
         }
     }
 }
