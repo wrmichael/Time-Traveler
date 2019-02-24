@@ -40,6 +40,10 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.VersionLabel = new System.Windows.Forms.Label();
+            this.FlexDock = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.GovCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -50,32 +54,32 @@
             // UTCLabel
             // 
             this.UTCLabel.AutoSize = true;
-            this.UTCLabel.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UTCLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UTCLabel.Location = new System.Drawing.Point(12, 9);
             this.UTCLabel.Name = "UTCLabel";
-            this.UTCLabel.Size = new System.Drawing.Size(161, 38);
+            this.UTCLabel.Size = new System.Drawing.Size(131, 23);
             this.UTCLabel.TabIndex = 1;
-            this.UTCLabel.Text = "00:00:00";
+            this.UTCLabel.Text = "U: 00:00:00";
             // 
             // LocalLabel
             // 
             this.LocalLabel.AutoSize = true;
-            this.LocalLabel.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocalLabel.Location = new System.Drawing.Point(12, 74);
+            this.LocalLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalLabel.Location = new System.Drawing.Point(12, 34);
             this.LocalLabel.Name = "LocalLabel";
-            this.LocalLabel.Size = new System.Drawing.Size(161, 38);
+            this.LocalLabel.Size = new System.Drawing.Size(131, 23);
             this.LocalLabel.TabIndex = 2;
-            this.LocalLabel.Text = "00:00:00";
+            this.LocalLabel.Text = "L: 00:00:00";
             // 
             // TimeIOLabel
             // 
             this.TimeIOLabel.AutoSize = true;
-            this.TimeIOLabel.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeIOLabel.Location = new System.Drawing.Point(12, 139);
+            this.TimeIOLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeIOLabel.Location = new System.Drawing.Point(12, 59);
             this.TimeIOLabel.Name = "TimeIOLabel";
-            this.TimeIOLabel.Size = new System.Drawing.Size(161, 38);
+            this.TimeIOLabel.Size = new System.Drawing.Size(131, 23);
             this.TimeIOLabel.TabIndex = 3;
-            this.TimeIOLabel.Text = "00:00:00";
+            this.TimeIOLabel.Text = "N: 00:00:00";
             // 
             // label1
             // 
@@ -87,18 +91,19 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 194);
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(12, 82);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 28);
+            this.button1.Size = new System.Drawing.Size(141, 36);
             this.button1.TabIndex = 5;
             this.button1.Text = "Update Local Time";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_click);
             // 
             // AdminLabel
             // 
             this.AdminLabel.AutoSize = true;
-            this.AdminLabel.Location = new System.Drawing.Point(11, 252);
+            this.AdminLabel.Location = new System.Drawing.Point(11, 150);
             this.AdminLabel.Name = "AdminLabel";
             this.AdminLabel.Size = new System.Drawing.Size(51, 17);
             this.AdminLabel.TabIndex = 6;
@@ -107,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 225);
+            this.label2.Location = new System.Drawing.Point(9, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 17);
             this.label2.TabIndex = 7;
@@ -116,7 +121,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(69, 252);
+            this.checkBox1.Location = new System.Drawing.Point(69, 150);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 21);
             this.checkBox1.TabIndex = 8;
@@ -130,17 +135,61 @@
             // VersionLabel
             // 
             this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(261, 244);
+            this.VersionLabel.Location = new System.Drawing.Point(250, 36);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(41, 17);
             this.VersionLabel.TabIndex = 9;
             this.VersionLabel.Text = "V 1.0";
             // 
+            // FlexDock
+            // 
+            this.FlexDock.AutoSize = true;
+            this.FlexDock.Location = new System.Drawing.Point(179, 150);
+            this.FlexDock.Name = "FlexDock";
+            this.FlexDock.Size = new System.Drawing.Size(112, 21);
+            this.FlexDock.TabIndex = 10;
+            this.FlexDock.Text = "Dock with FH";
+            this.FlexDock.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(262, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(29, 25);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Time Traveler 2019 AC9HP";
+            // 
+            // GovCheck
+            // 
+            this.GovCheck.AutoSize = true;
+            this.GovCheck.Location = new System.Drawing.Point(68, 174);
+            this.GovCheck.Name = "GovCheck";
+            this.GovCheck.Size = new System.Drawing.Size(117, 21);
+            this.GovCheck.TabIndex = 13;
+            this.GovCheck.Text = " time.nist.gov ";
+            this.GovCheck.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 282);
+            this.ClientSize = new System.Drawing.Size(300, 216);
+            this.ControlBox = false;
+            this.Controls.Add(this.GovCheck);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.FlexDock);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
@@ -150,8 +199,12 @@
             this.Controls.Add(this.TimeIOLabel);
             this.Controls.Add(this.LocalLabel);
             this.Controls.Add(this.UTCLabel);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Time Traveler 2019 AC9HP";
+            this.Opacity = 0.87D;
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,6 +223,10 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.CheckBox FlexDock;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox GovCheck;
     }
 }
 

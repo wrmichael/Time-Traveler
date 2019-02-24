@@ -20,6 +20,7 @@ namespace Time_Traveler
     {
         int ticks = 0;
         int ticks2 = 0;
+        DateTime oldestDate; 
 
         public Form1()
         {
@@ -28,7 +29,25 @@ namespace Time_Traveler
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            FlexDock.Checked = true;
+            GovCheck.Checked = true;
+
+            FileInfo fi = new FileInfo(Application.ExecutablePath);
+            oldestDate = fi.CreationTime;
+
+            try
+            {
+                timer1_Tick(this, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+            }
+                ticks = 0;
+            ticks2 = 0;
             timer1.Enabled = true;
+            timer2.Enabled = true;
+            checkBox1.Checked = true;
+
             if (IsUserAdministrator())
             {
                 AdminLabel.BackColor = Color.Green;
@@ -46,7 +65,11 @@ namespace Time_Traveler
             if (ticks > 10)
             {
                 ticks = 0;
-                DateTime dn = GetNetworkTime();
+                DateTime dn = GetNetworkTime(GovCheck.Checked);
+                if (dn < oldestDate)
+                {
+                    this.BackColor = Color.LightYellow;
+                }
                 if (dn.ToString("yyyymmdd").Equals("18990101"))
                 {
                     this.BackColor = Color.LightYellow;
@@ -80,16 +103,20 @@ namespace Time_Traveler
 
 
 
-        public static DateTime GetNetworkTime()
+        public static DateTime GetNetworkTime(Boolean gov=false)
         {
 
             try
             {
                 //default Windows time server
-                const string ntpServer = "time.windows.com";
+                string ntpServer = "time.windows.com";
+                if (gov)
+                {
+                    ntpServer = "time.nist.gov";
+                        }
 
                 // NTP message size - 16 bytes of the digest (RFC 2030)
-                var ntpData = new byte[48];
+                    var ntpData = new byte[48];
 
                 //Setting the Leap Indicator, Version Number and Mode values
                 ntpData[0] = 0x1B; //LI = 0 (no warning), VN = 3 (IPv4 only), Mode = 3 (Client Mode)
@@ -140,8 +167,9 @@ namespace Time_Traveler
 
                 return networkDateTime.ToLocalTime();
             }
-            catch (System.Net.Sockets.SocketException)
+            catch (System.Net.Sockets.SocketException se)
             {
+                Console.WriteLine(se.Message);
                 return new DateTime(1899, 01, 01);
             }
 
@@ -194,22 +222,28 @@ namespace Time_Traveler
         private void button1_click(object sender, EventArgs e)
         {
             //SetAC9HPSystemTime timercontrol = new SetAC9HPSystemTime();
-            label2.Text = "Last Time Set: " + SetAC9HPSystemTime.SetTime(GetNetworkTime()).ToString();
+            label2.Text = "Last Time Set: " + SetAC9HPSystemTime.SetTime(GetNetworkTime(GovCheck.Checked)).ToString();
 
 
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            
             ticks2 += 1;
             if (ticks2 > 15)
             {
                 ticks2 = 0;
-                DateTime dn = GetNetworkTime();
+                DateTime dn = GetNetworkTime(GovCheck.Checked);
                 if (dn.ToString("yyyymmdd").Equals("18990101"))
                 {
                     return;
                 }
+                if (dn < oldestDate)
+                {
+                    return;
+                }
+
                 if (!(DateTime.Now.ToString().Equals(dn.ToString())))
                 {
                     if (AdminLabel.BackColor == Color.LightGreen)
@@ -221,7 +255,33 @@ namespace Time_Traveler
                         }
                     }
                 }
+
+                //dock with flex helper app if its running.
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses())
+                {
+                  
+                        if (p.ProcessName.Equals("FlexHelper"))
+                        {
+                            try
+                            {
+                                if (FlexDock.Checked)
+                                {
+                                    PositionWindow.Rect myrect = PositionWindow.getpos("FlexHelper");
+                                    this.Top = myrect.Top-200;
+                                    this.Left = myrect.Left;
+                                }
+                            }
+                            catch (Exception ex)
+                            { }
+                        }
+                    }
+                }
             }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
