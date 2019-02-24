@@ -19,6 +19,7 @@ namespace Time_Traveler
     public partial class Form1 : Form
     {
         int ticks = 0;
+        int ticks2 = 0;
 
         public Form1()
         {
@@ -53,7 +54,7 @@ namespace Time_Traveler
                 if (DateTime.Now.ToString().Equals(dn.ToString()))
                 {
                     this.BackColor = Color.LightGreen;
-                    
+
 
                 }
                 else
@@ -70,14 +71,14 @@ namespace Time_Traveler
             }
             else
             {
-                UTCLabel.Text = "U:" + DateTime.UtcNow.ToString("hh:mm:ss");
+                UTCLabel.Text = "U: " + DateTime.UtcNow.ToString("hh:mm:ss");
                 LocalLabel.Text = "L: " + DateTime.Now.ToString("hh:mm:ss");
 
             }
 
         }
 
-        
+
 
         public static DateTime GetNetworkTime()
         {
@@ -156,34 +157,34 @@ namespace Time_Traveler
         }
 
 
-    
-    public bool IsUserAdministrator()
-    {
-        //bool value to hold our return value
-        bool isAdmin;
-        WindowsIdentity user = null;
-        try
+
+        public bool IsUserAdministrator()
         {
-            //get the currently logged in user
-            user = WindowsIdentity.GetCurrent();
-            WindowsPrincipal principal = new WindowsPrincipal(user);
-            isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            //bool value to hold our return value
+            bool isAdmin;
+            WindowsIdentity user = null;
+            try
+            {
+                //get the currently logged in user
+                user = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(user);
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                isAdmin = false;
+            }
+            catch (Exception ex)
+            {
+                isAdmin = false;
+            }
+            finally
+            {
+                if (user != null)
+                    user.Dispose();
+            }
+            return isAdmin;
         }
-        catch (UnauthorizedAccessException ex)
-        {
-            isAdmin = false;
-        }
-        catch (Exception ex)
-        {
-            isAdmin = false;
-        }
-        finally
-        {
-            if (user != null)
-                user.Dispose();
-        }
-        return isAdmin;
-    }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -195,7 +196,32 @@ namespace Time_Traveler
             //SetAC9HPSystemTime timercontrol = new SetAC9HPSystemTime();
             label2.Text = "Last Time Set: " + SetAC9HPSystemTime.SetTime(GetNetworkTime()).ToString();
 
-            
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            ticks2 += 1;
+            if (ticks2 > 15)
+            {
+                ticks2 = 0;
+                DateTime dn = GetNetworkTime();
+                if (dn.ToString("yyyymmdd").Equals("18990101"))
+                {
+                    return;
+                }
+                if (!(DateTime.Now.ToString().Equals(dn.ToString())))
+                {
+                    if (AdminLabel.BackColor == Color.LightGreen)
+                    {
+                        if (checkBox1.Checked)
+                        {
+                            label2.Text = "Auto Sync: " + SetAC9HPSystemTime.SetTime(dn);
+                            label2.BackColor = Color.LightSeaGreen;
+                        }
+                    }
+                }
+            }
         }
     }
 }
