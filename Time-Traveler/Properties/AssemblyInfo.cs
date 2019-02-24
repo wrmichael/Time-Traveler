@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Time-Traveler")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("With modes like JT65/WSPR and FT8 keeping your time from drifting becomes very important.  Don't let that time travel")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("AC9HP")]
 [assembly: AssemblyProduct("Time-Traveler")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
