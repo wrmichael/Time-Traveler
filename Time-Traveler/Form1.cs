@@ -38,8 +38,16 @@ namespace Time_Traveler
                 return;
             }
 
-            FlexDock.Checked = true;
+            FlexDock.Checked = false;
             GovCheck.Checked = true;
+
+            System.Diagnostics.Process[] ps1 = System.Diagnostics.Process.GetProcessesByName("FlexHelper");
+
+            if (ps1.Length > 1)
+            {
+                FlexDock.Checked = true;
+            }
+
 
             FileInfo fi = new FileInfo(Application.ExecutablePath);
             oldestDate = fi.CreationTime;
