@@ -20,7 +20,8 @@ namespace Time_Traveler
     {
         int ticks = 0;
         int ticks2 = 0;
-        DateTime oldestDate; 
+        DateTime oldestDate;
+        int LastTime = 0;
 
         public Form1()
         {
@@ -239,7 +240,12 @@ namespace Time_Traveler
         private void button1_click(object sender, EventArgs e)
         {
             //SetAC9HPSystemTime timercontrol = new SetAC9HPSystemTime();
-            label2.Text = "Last Time Set: " + SetAC9HPSystemTime.SetTime(GetNetworkTime(GovCheck.Checked)).ToString();
+            DateTime s = DateTime.Now;
+            label2.Text = "Last Time Set: " + SetAC9HPSystemTime.SetTime(GetNetworkTime(GovCheck.Checked),LastTime).ToString();
+            DateTime et = DateTime.Now;
+            TimeSpan ts = (et - s);
+            LastTime = ts.Milliseconds;
+            MSLabel.Text = LastTime.ToString() + " ms";
 
 
         }
@@ -251,6 +257,8 @@ namespace Time_Traveler
             if (ticks2 > 15)
             {
                 ticks2 = 0;
+                DateTime start = DateTime.Now;
+
                 DateTime dn = GetNetworkTime(GovCheck.Checked);
                 if (dn.ToString("yyyymmdd").Equals("18990101"))
                 {
@@ -267,8 +275,13 @@ namespace Time_Traveler
                     {
                         if (checkBox1.Checked)
                         {
-                            label2.Text = "Auto Sync: " + SetAC9HPSystemTime.SetTime(dn);
+                            DateTime st = DateTime.Now;
+                            label2.Text = "Auto Sync: " + SetAC9HPSystemTime.SetTime(dn,LastTime);
                             label2.BackColor = Color.LightSeaGreen;
+                            DateTime et = DateTime.Now;
+                            TimeSpan ts = (et - st);
+                            LastTime = ts.Milliseconds;
+                            MSLabel.Text = LastTime.ToString() + " ms";
                         }
                     }
                 }
@@ -315,6 +328,16 @@ namespace Time_Traveler
                 this.MinimizeBox = true;
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+
+            //System.Threading.Thread.Sleep(4000);
+            //TimeSpan sp = (DateTime.Now - dt);
+            //MessageBox.Show(sp.TotalMilliseconds.ToString());
+
         }
     }
 }

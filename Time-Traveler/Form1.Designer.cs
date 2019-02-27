@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.GovCheck = new System.Windows.Forms.CheckBox();
+            this.MSLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -181,12 +182,22 @@
             this.GovCheck.Text = " time.nist.gov ";
             this.GovCheck.UseVisualStyleBackColor = true;
             // 
+            // MSLabel
+            // 
+            this.MSLabel.AutoSize = true;
+            this.MSLabel.Location = new System.Drawing.Point(176, 91);
+            this.MSLabel.Name = "MSLabel";
+            this.MSLabel.Size = new System.Drawing.Size(38, 17);
+            this.MSLabel.TabIndex = 14;
+            this.MSLabel.Text = "0 ms";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(300, 216);
+            this.Controls.Add(this.MSLabel);
             this.Controls.Add(this.GovCheck);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -228,6 +239,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox GovCheck;
+        private System.Windows.Forms.Label MSLabel;
     }
 }
 

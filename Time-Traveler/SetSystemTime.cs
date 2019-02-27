@@ -41,10 +41,9 @@ namespace Time_Traveler
             //    stime.wHour.ToString() + ":"
             //    + stime.wMinute.ToString());
         }
-        public static DateTime SetTime(DateTime at)
+        public static DateTime SetTime(DateTime at,int st)
         {
             DateTime nt = at.ToUniversalTime();
-
             
             // Call the native GetSystemTime method
             // with the defined structure.
@@ -53,6 +52,9 @@ namespace Time_Traveler
 
             // Set the system clock ahead one hour.
             //systime.wHour (systime.wHour + 1 % 24);
+
+            //TimeSpan span = (DateTime.Now-st);
+            nt.AddMilliseconds(st*-1);
 
             stime.wDay = short.Parse(nt.ToString("dd"));
             stime.wYear = short.Parse(nt.ToString("yyyy"));
