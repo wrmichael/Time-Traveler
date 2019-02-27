@@ -56,7 +56,7 @@ namespace Time_Traveler
 
             stime.wDay = short.Parse(nt.ToString("dd"));
             stime.wYear = short.Parse(nt.ToString("yyyy"));
-            stime.wHour = short.Parse(nt.ToString("hh"));
+            stime.wHour = short.Parse(nt.ToString("HH"));
             stime.wMonth = short.Parse(nt.ToString("MM"));
             stime.wMinute = short.Parse(nt.ToString("mm"));
             stime.wSecond = short.Parse(nt.ToString("ss"));

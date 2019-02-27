@@ -139,7 +139,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(41, 17);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "V 1.0";
+            this.VersionLabel.Text = "V 1.5";
             // 
             // FlexDock
             // 
