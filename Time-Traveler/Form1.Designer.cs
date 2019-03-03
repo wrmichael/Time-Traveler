@@ -174,6 +174,7 @@
             this.label3.Size = new System.Drawing.Size(181, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "Time Traveler 2019 AC9HP";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // GovCheck
             // 
@@ -188,7 +189,7 @@
             // MSLabel
             // 
             this.MSLabel.AutoSize = true;
-            this.MSLabel.Location = new System.Drawing.Point(176, 91);
+            this.MSLabel.Location = new System.Drawing.Point(204, 91);
             this.MSLabel.Name = "MSLabel";
             this.MSLabel.Size = new System.Drawing.Size(38, 17);
             this.MSLabel.TabIndex = 14;
@@ -237,7 +238,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Opacity = 0.87D;
+            this.Opacity = 0.92D;
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;

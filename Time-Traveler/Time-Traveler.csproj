@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="PosWin.cs" />
     <None Include="Properties\Settings.settings">
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoTT.ico" />
+    <None Include="LogoTT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
