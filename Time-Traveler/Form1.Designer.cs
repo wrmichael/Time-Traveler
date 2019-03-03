@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.UTCLabel = new System.Windows.Forms.Label();
             this.LocalLabel = new System.Windows.Forms.Label();
@@ -233,6 +234,7 @@
             this.Controls.Add(this.TimeIOLabel);
             this.Controls.Add(this.LocalLabel);
             this.Controls.Add(this.UTCLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Opacity = 0.87D;
