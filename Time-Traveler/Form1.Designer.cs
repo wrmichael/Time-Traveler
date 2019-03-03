@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.GovCheck = new System.Windows.Forms.CheckBox();
             this.MSLabel = new System.Windows.Forms.Label();
+            this.D4 = new System.Windows.Forms.Label();
+            this.WT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -140,7 +142,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(41, 17);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "V 1.5";
+            this.VersionLabel.Text = "V 1.6";
             // 
             // FlexDock
             // 
@@ -191,12 +193,32 @@
             this.MSLabel.TabIndex = 14;
             this.MSLabel.Text = "0 ms";
             // 
+            // D4
+            // 
+            this.D4.AutoSize = true;
+            this.D4.Location = new System.Drawing.Point(254, 193);
+            this.D4.Name = "D4";
+            this.D4.Size = new System.Drawing.Size(26, 17);
+            this.D4.TabIndex = 15;
+            this.D4.Text = "D4";
+            // 
+            // WT
+            // 
+            this.WT.AutoSize = true;
+            this.WT.Location = new System.Drawing.Point(218, 193);
+            this.WT.Name = "WT";
+            this.WT.Size = new System.Drawing.Size(30, 17);
+            this.WT.TabIndex = 16;
+            this.WT.Text = "WT";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(300, 216);
+            this.Controls.Add(this.WT);
+            this.Controls.Add(this.D4);
             this.Controls.Add(this.MSLabel);
             this.Controls.Add(this.GovCheck);
             this.Controls.Add(this.label3);
@@ -240,6 +262,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox GovCheck;
         private System.Windows.Forms.Label MSLabel;
+        private System.Windows.Forms.Label D4;
+        private System.Windows.Forms.Label WT;
     }
 }
 

@@ -33,20 +33,27 @@ namespace Time_Traveler
 
             System.Diagnostics.Process[] ps = System.Diagnostics.Process.GetProcessesByName("Time-Traveler");
 
+
+
             if (ps.Length>1)
             {
                 this.Close();
                 return;
             }
 
-            FlexDock.Checked = false;
+            //FlexDock.Checked = false;
             GovCheck.Checked = true;
 
             System.Diagnostics.Process[] ps1 = System.Diagnostics.Process.GetProcessesByName("FlexHelper");
 
-            if (ps1.Length > 1)
+            if (ps1.Count() > 0)
             {
-                FlexDock.Checked = true;
+                
+                 FlexDock.Checked = true; 
+                
+            } else
+            {
+                FlexDock.Checked = false;
             }
 
 
@@ -256,6 +263,24 @@ namespace Time_Traveler
             ticks2 += 1;
             if (ticks2 > 15)
             {
+                if (ServiceManager.isServiceRunning("W32Time"))
+                {
+                    WT.BackColor = Color.Green;
+                }
+                else
+                {
+                    WT.BackColor = Color.Red;
+                }
+
+                if (ServiceManager.isServiceRunning("Dimension4"))
+                {
+                    D4.BackColor = Color.Green;
+                }
+                else
+                {
+                    D4.BackColor = Color.Red;
+                }
+
                 ticks2 = 0;
                 DateTime start = DateTime.Now;
 
