@@ -44,7 +44,7 @@ namespace Time_Traveler
             //FlexDock.Checked = false;
             GovCheck.Checked = true;
 
-            System.Diagnostics.Process[] ps1 = System.Diagnostics.Process.GetProcessesByName("FlexHelper");
+            System.Diagnostics.Process[] ps1 = System.Diagnostics.Process.GetProcessesByName("TouchRadio");
 
             if (ps1.Count() > 0)
             {
@@ -315,13 +315,13 @@ namespace Time_Traveler
                 foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses())
                 {
                   
-                        if (p.ProcessName.Equals("FlexHelper"))
+                        if (p.ProcessName.Equals("TouchRadio"))
                         {
                             try
                             {
                                 if (FlexDock.Checked)
                                 {
-                                    PositionWindow.Rect myrect = PositionWindow.getpos("FlexHelper");
+                                    PositionWindow.Rect myrect = PositionWindow.getpos("TouchRadio");
                                     this.Top = myrect.Top-200;
                                     this.Left = myrect.Left;
                                 }

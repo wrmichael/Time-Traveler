@@ -107,7 +107,7 @@
             // AdminLabel
             // 
             this.AdminLabel.AutoSize = true;
-            this.AdminLabel.Location = new System.Drawing.Point(11, 150);
+            this.AdminLabel.Location = new System.Drawing.Point(218, 174);
             this.AdminLabel.Name = "AdminLabel";
             this.AdminLabel.Size = new System.Drawing.Size(51, 17);
             this.AdminLabel.TabIndex = 6;
@@ -125,7 +125,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(69, 150);
+            this.checkBox1.Location = new System.Drawing.Point(12, 150);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 21);
             this.checkBox1.TabIndex = 8;
@@ -143,16 +143,16 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(41, 17);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "V 1.6";
+            this.VersionLabel.Text = "V 1.7";
             // 
             // FlexDock
             // 
             this.FlexDock.AutoSize = true;
-            this.FlexDock.Location = new System.Drawing.Point(179, 150);
+            this.FlexDock.Location = new System.Drawing.Point(122, 150);
             this.FlexDock.Name = "FlexDock";
-            this.FlexDock.Size = new System.Drawing.Size(112, 21);
+            this.FlexDock.Size = new System.Drawing.Size(143, 21);
             this.FlexDock.TabIndex = 10;
-            this.FlexDock.Text = "Dock with FH";
+            this.FlexDock.Text = "Dock TouchRadio";
             this.FlexDock.UseVisualStyleBackColor = true;
             this.FlexDock.CheckedChanged += new System.EventHandler(this.FlexDock_CheckedChanged);
             // 
@@ -179,7 +179,7 @@
             // GovCheck
             // 
             this.GovCheck.AutoSize = true;
-            this.GovCheck.Location = new System.Drawing.Point(68, 174);
+            this.GovCheck.Location = new System.Drawing.Point(12, 177);
             this.GovCheck.Name = "GovCheck";
             this.GovCheck.Size = new System.Drawing.Size(117, 21);
             this.GovCheck.TabIndex = 13;
